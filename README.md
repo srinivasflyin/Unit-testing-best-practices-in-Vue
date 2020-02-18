@@ -1,4 +1,4 @@
-# vueprj
+# Creating Vue Project with Vue Cli
 
 ## Project setup
 ```
