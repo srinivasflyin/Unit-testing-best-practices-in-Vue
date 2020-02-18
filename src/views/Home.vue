@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <Filters v-on:update:filter="filterObj= $event"/>
+    </div>
+    <div>
+      <Hotel :filters="filterObj"/>
+    </div>
+  <div>
+  </div>
   </div>
 </template>
 
-<script>
+<script lang='ts'>
+import  { Filter }  from '../shared/classesAndInterfaces' 
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
+import {Component,Vue } from 'vue-property-decorator';
+import Hotel from  '@/components/hotels.vue';
+import Filters  from '@/components/filters.vue';
+@Component({
   name: 'Home',
   components: {
-    HelloWorld
+    Hotel,
+   Filters
+  }
+})
+export default class Home extends Vue {
+  public filterObj: Filter = {countries: [], cities: []};
+  constructor() {
+    super()
+    this.filterObj['countries'] =  []
+    this.filterObj['cities'] = []
   }
 }
 </script>
