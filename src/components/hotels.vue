@@ -6,7 +6,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import List from "./list.vue";
-import  { Filter }  from '../shared/classesAndInterfaces' 
+import  { FilterClass }  from '../shared/classesAndInterfaces' 
 @Component({
   components: {
     List
@@ -19,15 +19,15 @@ export default class Hotel extends Vue {
     required: true,
     default: Object
   })
-  private filters!: Filter;
+  private filters!: FilterClass;
   @Watch("filters", { immediate: true, deep: true })
-  onFilterChanged(val: Filter, oldVal: Filter) {
+  onFilterChanged(val: FilterClass, oldVal: FilterClass) {
     this.searchHotels(val);
   }
   constructor() {
     super();
   }
-  searchHotels(filters: Filter) {
+  searchHotels(filters: FilterClass) {
     const htlValues: Array<any> = [];
 
     if (Object.keys(filters.countries).length > 0 || Object.keys(filters.cities).length > 0) {

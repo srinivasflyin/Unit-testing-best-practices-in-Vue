@@ -8,6 +8,7 @@
 </template>
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
+import {} from '../shared/classesAndInterfaces'
 @Component
 export default class List extends Vue {
     @Prop() public items!: object []

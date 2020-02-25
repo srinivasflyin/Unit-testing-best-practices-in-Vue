@@ -4,23 +4,23 @@
       Countries
       <div class="form-check form-check-inline" v-for="country in countries" :key="country.name">
         <input
-          class="form-check-input"
+          class="form-check-input countrySelect"
           type="checkbox"
           id="inlineCheckbox1"
           :value="country.name"
           v-model="filters.countries"
-          @change="getSelectedCountry"
+          @click="getSelectedCountry"
         />
-        <label class="form-check-label" for="inlineCheckbox1">{{country.name}}</label>
+        <label class="form-check-label lable" for="inlineCheckbox1">{{country.name}}</label>
       </div>Cities
       <div class="form-check" v-for="city in cities" :key="city.id">
         <input
-          class="form-check-input"
+          class="form-check-input citySelect"
           type="checkbox"
           id="inlineCheckbox2"
           :value="city.name"
           v-model="filters.cities"
-          @change="getSelectedCity"
+          @click="getSelectedCity"
         />
         <label class="form-check-label" for="inlineCheckbox2">{{city.name}}</label>
       </div>
@@ -29,25 +29,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit } from "vue-property-decorator";
-
+import { Component, Vue, Emit } from 'vue-property-decorator';
+import { countryData, cityData } from '../shared/filterData'
+import {City, Country } from '../shared/classesAndInterfaces'
+class Countryandcity {
+  countries: Array<Country> = []
+  cities: Array<City> = []
+}
 @Component
 export default class Filters extends Vue {
-  public countries: object[] = [];
-  public cities: object[] = [];
-  public filters = {countries: [], cities: []};
+  public countries: Array<Country> = []
+  public cities: Array<City> = []
+  public filters: Countryandcity = {countries: [], cities: []}
   constructor() {
     super();
-    this.countries = [
-      { name: "Austrailia", id: 1 },
-      { name: "United arab emirates", id: 2 },
-      { name: "United states of america", id: 3 }
-    ];
-    this.cities = [
-      { name: "perth", id: 1 },
-      { name: "dubai", id: 2 },
-      { name: "dollas", id: 3 }
-    ];
+    this.countries = countryData()
+    this.cities = cityData()
     this.filters['countries'] =  []
     this.filters['cities'] = []
   }

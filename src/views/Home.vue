@@ -12,7 +12,7 @@
 </template>
 
 <script lang='ts'>
-import  { Filter }  from '../shared/classesAndInterfaces' 
+import  { FilterClass }  from '../shared/classesAndInterfaces' 
 // @ is an alias to /src
 import {Component,Vue } from 'vue-property-decorator';
 import Hotel from  '@/components/hotels.vue';
@@ -25,7 +25,7 @@ import Filters  from '@/components/filters.vue';
   }
 })
 export default class Home extends Vue {
-  public filterObj: Filter = {countries: [], cities: []};
+  public filterObj: FilterClass = {countries: [], cities: []};
   constructor() {
     super()
     this.filterObj['countries'] =  []
