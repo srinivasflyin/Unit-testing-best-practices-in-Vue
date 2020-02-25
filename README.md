@@ -14,6 +14,10 @@ npm run serve
 ```
 npm run build
 ```
+### Run your production build locally 
+```
+npx serve dist
+```
 
 ### Run your unit tests
 ```
