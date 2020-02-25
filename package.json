@@ -2,6 +2,7 @@
   "name": "vueprj",
   "version": "0.1.0",
   "private": true,
+  "keywords":["vue","node","vue js","axios", "jest", "Vue Router", "vue cli", "cypress", "vue testing"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
