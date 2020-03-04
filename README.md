@@ -51,7 +51,7 @@ Setting up a spec file
 
 Like with regular tests, each component has a spec file which describes all tests we want to run.
 
-Specs are JavaScript files. By convention, they have the same name as the components they’re testing, plus a .spec suffix.
+Specs are typescript files. By convention, they have the same name as the components they’re testing, plus a .spec suffix.
 
 Go ahead and create a test/unit/list.spec.ts file.
 
