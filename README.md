@@ -67,12 +67,24 @@ Go ahead and create a test/unit/list.spec.ts file.
                       }
                   })
               })
-
-              it('should register list component', () => {
-                  expect(wrapper.props().items.length).toBe(17)
-              })
           })
 Here we are passing props data as the array of hotels which will be taking from the json data defined in the hotelsDummyData.
 The list component takes the props data and iterates using v-for built-in Vue directive to display the hotes.
 ShallowMount is used to create  a Wrapper that contains the mounted and rendered Vue component, but with stubbed child components.
 Refer the official doc https://vue-test-utils.vuejs.org/api/#shallowmount.
+
+The describe function call wraps all the test we’re about to write; it describes our testing suite. It has its own scope, and can itself wrap other nested suites.
+
+Then, we can write our first assertion:
+
+              it('should check prop items length', () => {
+                  expect(wrapper.props().items.length).toBe(17)
+              })
+              
+The expect function also returns an object on which we can call methods to test the passed value: these methods are called matchers. Here, we use the toBe matcher and pass it the expected value as in arguments. The method returns a boolean, which is what a test expects to either pass or fail.      
+
+In your terminal, run your test:
+
+`
+npm run test:unit
+`
