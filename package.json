@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "keywords":["vue","node","vue js","axios", "jest", "Vue Router", "vue cli", "cypress", "vue testing"],
+    "workspaces": [
+    "examples/*",
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srinivasflyin/Unit-testing-best-practices-in-Vue.git"
+  },
+  "author": "Srinivas S <sriniwas.sunkara95@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
